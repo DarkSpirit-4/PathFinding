@@ -84,9 +84,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\engine\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="cpe_core.vcxproj">
       <Project>{F7ACF739-8350-5FF2-8781-386CCC48E55C}</Project>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -95,6 +92,9 @@
       <Project>{3E4CF242-61D8-5CEE-B04D-1CC6EC9481E5}</Project>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\engine\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Target Name="CopyCampusData" AfterTargets="Build">
