@@ -1,2 +1,9 @@
-﻿  navmesh.cpp
+﻿  level.cpp
+  navigation_debug.cpp
+  simulation.cpp
+  enemy_ai.cpp
+  gameplay.cpp
+  navigation_agent.cpp
+  navmesh.cpp
+  pathfinding.cpp
   cpe_core.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFinding2\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib

@@ -60,8 +60,6 @@ public:
     bool SegmentInside(Vec2 from, Vec2 to) const;
     const Portal* NavMesh::Between(int a, int b) const;
     Path FindPath(Vec2 from, Vec2 to, Algorithm algorithm) const;
-    bool ValidNode(const Graph& graph, int id);
-    bool ValidGraph(const Graph& graph);
 
     // Le debug peut lire le résultat une fois construit par l'étudiant.
     const std::vector<Polygon>& Polygons() const { return polygons_; }

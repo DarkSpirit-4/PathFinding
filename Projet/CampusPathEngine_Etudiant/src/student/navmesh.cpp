@@ -235,4 +235,14 @@ Path NavMesh::FindPath(Vec2 from, Vec2 to, Algorithm algorithm) const {
     }
     return result;
 }
+void AddUndirected(Graph& graph_, int a, int b, double cost) {
+    // Précondition : a et b sont des indices valides.
+    graph_.at(a).push_back({ b, cost });
+    graph_.at(b).push_back({ a, cost });
+}
+
+void AddDirected(Graph& graph_, int a, int b, double cost) {
+    // Précondition : a et b sont des indices valides.
+    graph_.at(a).push_back({ b, cost });
+}
 }
