@@ -29,8 +29,14 @@ SearchResult Dijkstra(const Graph& graph, int start, int goal);
 SearchResult AStar(const Graph& graph, int start, int goal,
                    const std::vector<double>& heuristic);
 
+bool ValidNode(const Graph& graph, int id);
+bool ValidGraph(const Graph& graph);
+
+void AddUndirected(Graph& graph_, int a, int b, double cost);
+void AddDirected(Graph& graph_, int a, int b, double cost);
+
 struct Polygon { std::vector<Vec2> vertices; Vec2 center; };
-struct Portal { int a, b; Vec2 p, q; };
+struct Portal { int a, b; Vec2 p, q; Vec2 Middle() const { return (p + q) * 0.5; } };
 struct Path {
     SearchResult search;
     std::vector<Vec2> points;
@@ -59,6 +65,7 @@ public:
     const std::vector<Polygon>& Polygons() const { return polygons_; }
     const std::vector<Portal>& Portals() const { return portals_; }
     const Graph& GetGraph() const { return graph_; }
+
 private:
     std::vector<std::vector<Vec2>> source_;
     std::vector<Polygon> polygons_;
