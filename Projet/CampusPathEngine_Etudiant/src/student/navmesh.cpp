@@ -1,13 +1,75 @@
 #include "cpe/navigation.hpp"
+#include <stdexcept>
+
 namespace cpe {
-bool NavMesh::Build() {
-    // TODO J3 : valider et structurer source_, calculer les adjacences/portails.
-    // Remplir polygons_, portals_, graph_, puis définir built_=true.
-    for (int i = 0; i < source_.size(); i++) {
+    //Complet
+    bool NavMesh::Build() {
+
+        built_ = false;
+        polygons_.clear();
+        graph_.clear();
+
+        for (int i = 0; i < source_.size(); i++) {
+            if (source_[i].size() < 3) throw std::invalid_argument("Au moins trois sommets requis");
+            Vec2 sum{};
+            for (std::size_t j = 0;j < source_[i].size();++j) {
+                if (!Finite(source_[i][j]))
+                    throw std::invalid_argument("Coordonnees invalides.");
+                for (std::size_t k = 0;k < j;++k) {
+                    if (Near(source_[i][j], source_[i][k]))
+                        throw std::invalid_argument("Sommet repete.");
+                }
+                sum = sum + source_[i][j];
+            }
+            const Vec2 center = sum * (1.0 / static_cast<double>(source_[i].size()));
+            polygons_.push_back({ source_[i], center });
+        }
+
+        for (int l = 0; l < portals_.size(); l++) {
+            if (!ValidNode(graph_,
+                portals_[l].a) ||
+                !ValidNode(graph_, portals_[l].b) ||
+                portals_[l].a == portals_[l].b) {
+                throw std::invalid_argument(
+                    "Indices de portail invalides."
+                );
+            }
+
+            if (!Finite(portals_[l].p) || !Finite(portals_[l].q) || Distance(portals_[l].p, portals_[l].q) < 1e-8) {
+                throw std::invalid_argument(
+                    "Portail invalide ou de longueur nulle.");
+            }
+
+            int regionA = portals_[l].a;
+            int regionB = portals_[l].b;
+
+            // Les deux extrémités doivent appartenir aux deux régions.
+            if (!Contains(regionA, portals_[l].p) ||
+                !Contains(regionA, portals_[l].q) ||
+                !Contains(regionB, portals_[l].p) ||
+                !Contains(regionB, portals_[l].q)) {
+                throw std::invalid_argument(
+                    "Le portail n'appartient pas aux deux regions."
+                );
+            }
+
+            const Vec2 middle = portals_[l].Middle();
+
+            const double cost = Distance(polygons_[regionA].center, middle) + Distance(middle, polygons_[regionB].center);
+
+           AddUndirected(graph_, portals_[l].a, portals_[l].b, cost);
+
+
+            // TODO J3 : valider et structurer source_, calculer les adjacences/portails.
+            // Remplir polygons_, portals_, graph_, puis définir built_=true.
+
+        }
+
+        built_ = true;
+        return true;
 
     }
-    return false;
-}
+
 int NavMesh::Locate(Vec2 point) const {
     (void)point;
     if (!Finite(point)) return -1;
