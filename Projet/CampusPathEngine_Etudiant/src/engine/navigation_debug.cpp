@@ -29,6 +29,10 @@ void NavMesh::SetSourcePolygons(const std::vector<std::vector<Vec2>>& source) {
     graph_.clear();
     built_ = false;
 }
+const bool Navigator::Finished()
+{
+    return next >= path.points.size();
+}
 void Navigator::Invalidate() {
     path = Path{};
     next = 0;
