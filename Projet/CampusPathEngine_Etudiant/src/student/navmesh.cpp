@@ -4,14 +4,15 @@
 namespace cpe {
 
     bool NavMesh::Build() {
-
+        // TODO J3 : valider et structurer source_, calculer les adjacences/portails.
+        // Remplir polygons_, portals_, graph_, puis définir built_=true.
         built_ = false;
         polygons_.clear();
         portals_.clear();
         graph_.clear();
 
         if (source_.empty())
-            throw std::invalid_argument("Aucun polygone");
+            throw std::invalid_argument("Aucun polygone.");
 
         // Validation et structuration
         std::vector<Polygon> polygons;
@@ -19,7 +20,7 @@ namespace cpe {
         for (const auto& source : source_) {
             const std::size_t n = source.size();
             if (n < 3)
-                throw std::invalid_argument("Au moins trois sommets requis");
+                throw std::invalid_argument("Au moins trois sommets requis.");
 
             Vec2 sum{};
             for (std::size_t j = 0; j < n; ++j) {

@@ -24,7 +24,7 @@ struct SearchResult {
 // À réaliser dans src/student/pathfinding.cpp.
 // Found : chemin départ -> arrivée et coût.
 // NoPath : graphe valide mais destination inaccessible.
-// InvalidInput : indices, poids ou heuristique invalides.
+// InvalidInput : indices, poids ou heuristique invalides.                  
 SearchResult Dijkstra(const Graph& graph, int start, int goal);
 SearchResult AStar(const Graph& graph, int start, int goal,
                    const std::vector<double>& heuristic);
