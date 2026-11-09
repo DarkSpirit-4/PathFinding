@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\src\\engine\\main.cpp",
+        "Source": "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\src\\engine\\main.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\include\\cpe\\simulation.hpp",
-            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\include\\cpe\\level.hpp",
-            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\include\\cpe\\navigation.hpp",
-            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\include\\cpe\\math.hpp",
+            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\include\\cpe\\simulation.hpp",
+            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\include\\cpe\\level.hpp",
+            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\include\\cpe\\navigation.hpp",
+            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\include\\cpe\\math.hpp",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\algorithm",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\vcruntime.h",
@@ -132,7 +132,7 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\xlocbuf",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\xlocmes",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\string",
-            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfinding2\\projet\\campuspathengine_etudiant\\external\\raylib\\src\\raylib.h",
+            "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\external\\raylib\\src\\raylib.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\stdarg.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\stdbool.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\iostream",

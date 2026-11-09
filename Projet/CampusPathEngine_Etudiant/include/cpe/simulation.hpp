@@ -3,7 +3,9 @@
 #include <cstddef>
 
 namespace cpe {
-struct Player { Vec2 position; Vec2 facing{0,-1}; };
+struct Player { Vec2 position; Vec2 facing{0,-1};
+int hp = 10;
+};
 
 // Ce composant expose les données au debug ; le suivi est à implémenter.
 struct Navigator {
@@ -25,6 +27,12 @@ struct Enemy {
     EnemyKind kind = EnemyKind::Light;
     State state = State::Waiting;
     Navigator navigator;
+    int hp = 10;
+    double timer = 0.0;
+    double detectRange = 8.0, loseRange = 10.0, attackRange = 0.65;
+    double windupDuration = 0.5, recoverDuration = 0.8;
+    double speed = 2.5;
+    int damage = 1;
 };
 class Simulation {
 public:
