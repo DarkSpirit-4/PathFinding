@@ -137,6 +137,8 @@ int main(int argc, char** argv) {
                 }
             }
 
+            if (IsKeyPressed(KEY_SPACE)) sim->Attack(actionPending);
+
             BeginDrawing();
             ClearBackground(Color{21,26,36,255});
             BeginMode3D(camera);
@@ -183,7 +185,7 @@ int main(int argc, char** argv) {
                 DrawText("F1 surfaces | F2 chemins | F3 HUD | Tab algo | N selection | F5 scene | P pause | R reset",
                     25,130,16,GRAY);
                 DrawRectangle(12,GetScreenHeight()-48,GetScreenWidth()-24,36,Fade(BLACK,.8f));
-                DrawText("ZQSD / WASD / fleches : bouger | Clic gauche : requete | Espace : point d'extension gameplay",
+                DrawText("ZQSD / WASD / fleches : bouger | Clic gauche : requete | Espace : attaquer",
                     25,GetScreenHeight()-39,16,WHITE);
             }
             if (paused) DrawText("PAUSE",GetScreenWidth()/2-55,170,32,YELLOW);

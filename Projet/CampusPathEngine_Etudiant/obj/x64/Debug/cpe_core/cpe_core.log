@@ -1,13 +1,7 @@
-﻿  level.cpp
-  navigation_debug.cpp
+﻿  navigation_debug.cpp
   simulation.cpp
   enemy_ai.cpp
   gameplay.cpp
   navigation_agent.cpp
-  navmesh.cpp
-  pathfinding.cpp
-C:\Users\hrakotoarivelo\source\repos\PathFindingW\Projet\CampusPathEngine_Etudiant\src\student\enemy_ai.cpp(21,56): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
-C:\Users\hrakotoarivelo\source\repos\PathFindingW\Projet\CampusPathEngine_Etudiant\src\student\enemy_ai.cpp(24,29): warning C4804: « <= » : utilisation risquée du type « bool » dans l’opération
-C:\Users\hrakotoarivelo\source\repos\PathFindingW\Projet\CampusPathEngine_Etudiant\src\student\enemy_ai.cpp(26,31): warning C4804: « > » : utilisation risquée du type « bool » dans l’opération
-C:\Users\hrakotoarivelo\source\repos\PathFindingW\Projet\CampusPathEngine_Etudiant\src\student\enemy_ai.cpp(34,17): warning C4804: « <= » : utilisation risquée du type « bool » dans l’opération
-  cpe_core.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFindingW\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib
+C:\Users\hrakotoarivelo\source\repos\PathFindingL\Projet\CampusPathEngine_Etudiant\src\engine\simulation.cpp(47,30): warning C4100: « actionPressed » : paramètre non référencé
+  cpe_core.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFindingL\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib

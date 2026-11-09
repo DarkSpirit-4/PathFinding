@@ -5,6 +5,8 @@
 namespace cpe {
 struct Player { Vec2 position; Vec2 facing{0,-1};
 int hp = 10;
+int damage = 2;
+int attackRange = 2;
 };
 
 // Ce composant expose les données au debug ; le suivi est à implémenter.
@@ -45,6 +47,7 @@ public:
 
     // Fourni : déplacement, collisions, boucle et appels des points d'extension.
     void Update(Vec2 movement, bool actionPressed, double dt);
+    void Attack(bool actionPressed);
     void Reset();
     void SetAlgorithm(Algorithm value);
     std::size_t RequestCount() const;

@@ -1,6 +1,10 @@
 #include "cpe/simulation.hpp"
 #include <algorithm>
 #include <stdexcept>
+#include <iostream>
+using namespace std;
+
+
 
 namespace cpe {
     void Simulation::UpdateEnemy(Enemy& enemy, double dt) {
@@ -10,7 +14,7 @@ namespace cpe {
 
         (void)enemy;
         (void)dt;
-
+        
         if (enemy.hp <= 0) {
             enemy.state = State::Dead;
             enemy.navigator.Invalidate();
@@ -18,9 +22,9 @@ namespace cpe {
         }
 
         if (enemy.state == State::Dead) return;
-        if (enemy.state == State::Waiting) enemy.state == State::Idle;
+        if (enemy.state == State::Waiting) enemy.state = State::Idle;
 
-        const bool distance = Distance(enemy.position, player.position);
+        const double distance = Distance(enemy.position, player.position);
         const bool canHit = distance <= enemy.attackRange;
 
         if (player.hp <= 0 || distance > enemy.loseRange) {

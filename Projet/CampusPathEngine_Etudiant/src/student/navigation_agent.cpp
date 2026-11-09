@@ -23,7 +23,6 @@ Vec2 Navigator::Follow(const Level& level, Vec2 position, double speed, double d
     (void)level;
     (void)speed;
     (void)dt;
-    if (dt < 0.0)
     if (path.search.status != Status::Found || dt <= 0 || speed <= 0) return position;
     double budget = speed * dt;
     while (!Finished() && budget > 0) {
