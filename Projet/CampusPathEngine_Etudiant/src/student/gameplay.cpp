@@ -5,5 +5,8 @@ void Simulation::UpdateGameplay(bool actionPressed, double dt) {
     // Espace alimente actionPressed ; aucun effet de jeu n'est fourni.
     (void)actionPressed;
     (void)dt;
+
+
+
 }
 }
