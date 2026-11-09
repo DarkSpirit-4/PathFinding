@@ -12,6 +12,9 @@ struct Navigator {
     Path path;
     std::size_t next = 0;
     std::size_t requests = 0;
+    Vec2 lastTarget{};
+    bool hasTarget = false;
+    double requestCooldown = 0.0;
     const bool Finished();
     void Invalidate();
     void Plan(const Level& level, Vec2 position, Vec2 target, Algorithm algorithm);

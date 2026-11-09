@@ -3,10 +3,10 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "C:\\Users\\hrakotoarivelo\\source\\repos\\PathFindingW\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.obj",
+            "primary-output": "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.obj",
             "outputs": [
-                "C:\\Users\\hrakotoarivelo\\source\\repos\\PathFindingW\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.cpp.obj.dt.module.json",
-                "C:\\Users\\hrakotoarivelo\\source\\repos\\PathFindingW\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.cpp.obj.dt.d.json"
+                "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.cpp.obj.dt.module.json",
+                "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\simulation.cpp.obj.dt.d.json"
             ],
             "requires": []
         }

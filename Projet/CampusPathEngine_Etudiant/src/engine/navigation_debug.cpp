@@ -36,5 +36,7 @@ const bool Navigator::Finished()
 void Navigator::Invalidate() {
     path = Path{};
     next = 0;
+    requestCooldown = 0.0;
+    hasTarget = false;
 }
 }
