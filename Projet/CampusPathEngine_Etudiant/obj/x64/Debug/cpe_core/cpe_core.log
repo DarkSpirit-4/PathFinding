@@ -1,2 +1,6 @@
-﻿  navigation_agent.cpp
-  cpe_core.vcxproj -> C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib
+﻿  navigation_debug.cpp
+  simulation.cpp
+  enemy_ai.cpp
+  gameplay.cpp
+  navigation_agent.cpp
+  cpe_core.vcxproj -> C:\Users\Rakot\source\repos\PathFindingOneShot\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib

@@ -128,6 +128,9 @@ int main(int argc, char** argv) {
                 double((IsKeyDown(KEY_S)||IsKeyDown(KEY_DOWN)) -
                        (IsKeyDown(KEY_W)||IsKeyDown(KEY_Z)||IsKeyDown(KEY_UP)))
             };
+
+            if (sim->player.hp <= 0) movement = { 0, 0 };
+
             if (!paused && IsKeyPressed(KEY_SPACE)) actionPending=true;
             if (!paused) {
                 accumulator+=frame;
@@ -153,9 +156,13 @@ int main(int argc, char** argv) {
                 DrawCubeWires(World(at,float(wall.height*.5)),sx,float(wall.height),sz,Color{118,140,170,255});
             }
             float radius=float(sim->level.agentRadius);
-            DrawCylinder(World(sim->player.position,0),radius,radius,.7f,12,GREEN);
-            DrawLine3D(World(sim->player.position,.8f),
-                World(sim->player.position+sim->player.facing*.7,.8f),WHITE);
+
+            if (sim->player.hp > 0) {
+                DrawCylinder(World(sim->player.position, 0), radius, radius, .7f, 12, GREEN);
+                DrawLine3D(World(sim->player.position, .8f),
+                    World(sim->player.position + sim->player.facing * .7, .8f), WHITE);
+            }
+
             for (int i=0; i<static_cast<int>(sim->enemies.size()); ++i) {
                 const auto& e=sim->enemies[i];
                 bool heavy=e.kind==cpe::EnemyKind::Heavy;
@@ -187,7 +194,13 @@ int main(int argc, char** argv) {
                     25,GetScreenHeight()-39,16,WHITE);
             }
             if (paused) DrawText("PAUSE",GetScreenWidth()/2-55,170,32,YELLOW);
+
+            if (sim->player.hp <= 0)
+                DrawText("DEFAITE", GetScreenWidth() / 2 - 110, GetScreenHeight() / 2 - 24, 48, RED);
+            DrawText(TextFormat("PV: %d | Ennemis: %d", sim->player.hp,
+                static_cast<int>(sim->enemies.size())), GetScreenWidth() - 260, 24, 20, WHITE);
             EndDrawing();
+
             if (smoke && ++frames>=90) break;
         }
         CloseWindow();

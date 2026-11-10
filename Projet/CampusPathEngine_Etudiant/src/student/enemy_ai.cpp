@@ -59,7 +59,7 @@ namespace cpe {
 
         case State::Windup:
             distance = Distance(enemy.position, player.position);
-            if (distance <= enemy.attackRange) {
+            if (distance > enemy.attackRange) {
                 enemy.state = State::Chase;
                 enemy.timer = 0.0;
                 enemy.navigator.Invalidate();

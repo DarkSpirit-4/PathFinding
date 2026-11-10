@@ -5,6 +5,11 @@
 namespace cpe {
 struct Player { Vec2 position; Vec2 facing{0,-1};
 int hp = 10;
+double attackCooldown = 0.0;
+double attackRange = 1.6;
+double attackCone = 0.5;
+double attackDelay = 0.8;
+int attackDamage = 10;
 };
 
 // Ce composant expose les données au debug ; le suivi est à implémenter.

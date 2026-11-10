@@ -3,10 +3,10 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.obj",
+            "primary-output": "C:\\Users\\Rakot\\source\\repos\\PathFindingOneShot\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.obj",
             "outputs": [
-                "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.cpp.obj.dt.module.json",
-                "C:\\Users\\mwang\\source\\repos\\PathFinding\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.cpp.obj.dt.d.json"
+                "C:\\Users\\Rakot\\source\\repos\\PathFindingOneShot\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.cpp.obj.dt.module.json",
+                "C:\\Users\\Rakot\\source\\repos\\PathFindingOneShot\\Projet\\CampusPathEngine_Etudiant\\vs2026\\..\\obj\\x64\\Debug\\cpe_core\\enemy_ai.cpp.obj.dt.d.json"
             ],
             "requires": []
         }
