@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
-    <Filter Include="Socle moteur">
-      <UniqueIdentifier>{816557DB-3933-5EB4-9A0D-A73693EEA181}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Travail etudiant">
       <UniqueIdentifier>{7BB6A007-34F9-56BD-9EDF-0395834360CE}</UniqueIdentifier>
     </Filter>
     <Filter Include="Interfaces">
       <UniqueIdentifier>{C4C92A10-376D-518B-ABE7-DD91F61475C1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interfaces\Socle moteur">
+      <UniqueIdentifier>{816557DB-3933-5EB4-9A0D-A73693EEA181}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\engine\level.cpp">
-      <Filter>Socle moteur</Filter>
+      <Filter>Interfaces\Socle moteur</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\navigation_debug.cpp">
-      <Filter>Socle moteur</Filter>
+      <Filter>Interfaces\Socle moteur</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\simulation.cpp">
-      <Filter>Socle moteur</Filter>
+      <Filter>Interfaces\Socle moteur</Filter>
     </ClCompile>
     <ClCompile Include="..\src\student\enemy_ai.cpp">
       <Filter>Travail etudiant</Filter>

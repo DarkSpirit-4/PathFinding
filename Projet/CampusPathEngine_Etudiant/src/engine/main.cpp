@@ -187,10 +187,10 @@ int main(int argc, char** argv) {
                         cpe::Name(probe.search.status),probe.search.expanded,probe.queryMicroseconds),
                         25,105,18,SKYBLUE);
                 }
-                DrawText("F1 surfaces | F2 chemins | F3 HUD | Tab algo | N selection | F5 scene | P pause | R reset",
+                DrawText("F1: Surfaces | F2: Chemins | F3: HUD | Tab: algo | N: Selection | F5: Scene | P: Pause | R: Reset",
                     25,130,16,GRAY);
                 DrawRectangle(12,GetScreenHeight()-48,GetScreenWidth()-24,36,Fade(BLACK,.8f));
-                DrawText("ZQSD / WASD / fleches : bouger | Clic gauche : requete | Espace : point d'extension gameplay",
+                DrawText("ZQSD / WASD / fleches : bouger | Clic gauche : requete | Espace : attaquer",
                     25,GetScreenHeight()-39,16,WHITE);
             }
             if (paused) DrawText("PAUSE",GetScreenWidth()/2-55,170,32,YELLOW);

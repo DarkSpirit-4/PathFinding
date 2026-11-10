@@ -6,6 +6,8 @@ player -5 0
 enemy light -5 -4
 enemy heavy -5 4
 enemy light 5 0
+enemy light 0 5
+enemy heavy 2 3
 wall -1.5 -2 1.5 2 1.5
 # Surfaces sources de visualisation, sans graphe ni adjacences.
 # Ces données ne constituent pas un composant NavMesh implémenté.

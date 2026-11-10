@@ -32,6 +32,5 @@ void Simulation::UpdateGameplay(bool actionPressed, double dt) {
 
     enemies.erase(std::remove_if(enemies.begin(), enemies.end(),
         [](const Enemy& e) { return e.hp <= 0; }), enemies.end());
-
 }
 }

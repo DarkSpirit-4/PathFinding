@@ -37,10 +37,12 @@ struct Enemy {
     Navigator navigator;
     int hp = 10;
     double timer = 0.0;
-    double detectRange = 8.0, loseRange = 10.0, attackRange = 0.65;
+    double detectRange = 8.0, loseRange = 10.0, attackRange = 0.7;
     double windupDuration = 0.5, recoverDuration = 0.8;
     double speed = 2.5;
+    double speedheavy = 2.0;
     int damage = 1;
+    int damageheavy = 3;
 };
 class Simulation {
 public:

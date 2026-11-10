@@ -1,4 +1,5 @@
 #include "cpe/simulation.hpp"
+#include "cpe/level.hpp"
 #include <algorithm>
 #include <stdexcept>
 
@@ -52,8 +53,14 @@ namespace cpe {
                 break;
             }
             else {
-                enemy.navigator.Plan(level, enemy.position, player.position, algorithm);
-                enemy.position = enemy.navigator.Follow(level, enemy.position, enemy.speed, dt);
+                if (enemy.kind == EnemyKind::Heavy) {
+                    enemy.navigator.Plan(level, enemy.position, player.position, algorithm);
+                    enemy.position = enemy.navigator.Follow(level, enemy.position, enemy.speedheavy, dt);
+                }
+                else {
+                    enemy.navigator.Plan(level, enemy.position, player.position, algorithm);
+                    enemy.position = enemy.navigator.Follow(level, enemy.position, enemy.speed, dt);
+                }
             }
             break;
 
@@ -69,9 +76,17 @@ namespace cpe {
             if (enemy.timer <= 0.0) {
                 distance = Distance(enemy.position, player.position);
                 if (distance <= enemy.attackRange && level.navmesh.SegmentInside(player.position, enemy.position)) {
-                    player.hp = player.hp - enemy.damage;
-                    enemy.state = State::Recover;
-                    enemy.timer = enemy.recoverDuration;
+
+                    if (enemy.kind == EnemyKind::Heavy) {
+                        player.hp = player.hp - enemy.damageheavy;
+                        enemy.state = State::Recover;
+                        enemy.timer = enemy.recoverDuration;
+                    }
+                    else {
+                        player.hp = player.hp - enemy.damage;
+                        enemy.state = State::Recover;
+                        enemy.timer = enemy.recoverDuration;
+                    }
                 }
                 else {
                     enemy.state = State::Chase;
