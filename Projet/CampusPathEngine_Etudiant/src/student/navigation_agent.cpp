@@ -59,5 +59,19 @@ Vec2 Navigator::Follow(const Level& level, Vec2 position, double speed, double d
     }
     return position;
 }
+int Simulation::closest(Enemy& enemy) {
+    int closest = -1;
+    double distance = std::numeric_limits<double>::max();
+    for (int i = 0; i < enemies.size(); i++) {
+        double d = Distance(enemy.position, enemies[i].position);
+        if (&enemies[i] == &enemy) continue;
+
+        if (enemies[i].hp != enemies[i].maxHp && d > 1e-8 && d < distance) {
+            closest = i;
+            distance = d;
+        }
+    }
+    return closest;
+}
 }
 
