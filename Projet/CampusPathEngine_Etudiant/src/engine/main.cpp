@@ -140,6 +140,8 @@ int main(int argc, char** argv) {
                 }
             }
 
+            if (IsKeyPressed(KEY_SPACE)) sim->Attack(actionPending);
+
             BeginDrawing();
             ClearBackground(Color{21,26,36,255});
             BeginMode3D(camera);

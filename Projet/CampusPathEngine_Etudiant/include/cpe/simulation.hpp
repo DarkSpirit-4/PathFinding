@@ -55,6 +55,7 @@ public:
 
     // Fourni : déplacement, collisions, boucle et appels des points d'extension.
     void Update(Vec2 movement, bool actionPressed, double dt);
+    void Attack(bool actionPressed);
     void Reset();
     void SetAlgorithm(Algorithm value);
     std::size_t RequestCount() const;

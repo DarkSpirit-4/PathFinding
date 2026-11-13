@@ -9,6 +9,7 @@ void Simulation::Reset() {
     player.position = level.playerSpawn;
     enemies.clear();
     elapsed = 0;
+
     for (const auto& spawn : level.spawns) {
         Enemy enemy;
         enemy.position = spawn.position;
@@ -42,5 +43,15 @@ void Simulation::Update(Vec2 movement, bool actionPressed, double dt) {
 
     UpdateGameplay(actionPressed, dt);
     for (auto& enemy : enemies) UpdateEnemy(enemy, dt);
+}
+void Simulation::Attack(bool actionPressed)
+{
+    for (int i = 0; i < enemies.size(); i++) {
+        if (Distance(player.position, enemies[i].position) < player.attackRange) {
+            
+        }
+
+    }
+
 }
 }

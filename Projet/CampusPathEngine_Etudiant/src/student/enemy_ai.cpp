@@ -2,6 +2,10 @@
 #include "cpe/level.hpp"
 #include <algorithm>
 #include <stdexcept>
+#include <iostream>
+using namespace std;
+
+
 
 namespace cpe {
     void Simulation::UpdateEnemy(Enemy& enemy, double dt) {
@@ -23,7 +27,8 @@ namespace cpe {
         if (enemy.state == State::Dead) return;
         if (enemy.state == State::Waiting) enemy.state = State::Idle;
 
-        double distance = Distance(enemy.position, player.position);
+        const double distance = Distance(enemy.position, player.position);
+        const bool canHit = distance <= enemy.attackRange;
 
         if (player.hp <= 0) {
             enemy.state = State::Idle;
