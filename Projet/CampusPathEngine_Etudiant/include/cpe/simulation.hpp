@@ -38,7 +38,7 @@ struct Enemy {
     int hp = 10;
     int maxHp = 10;
     double timer = 0.0;
-    double detectRange = 8.0, loseRange = 10.0, attackRange = 0.7, healRange = 5.0;
+    double detectRange = 8.0, loseRange = 10.0, attackRange = 0.7, healRange = 2.0;
     double windupDuration = 0.5, recoverDuration = 0.8, healCooldown = 1.0;
     double speed = 2.5;
     double speedheavy = 2.0;
