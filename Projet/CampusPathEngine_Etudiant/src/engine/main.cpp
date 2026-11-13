@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
                        (IsKeyDown(KEY_W)||IsKeyDown(KEY_Z)||IsKeyDown(KEY_UP)))
             };
 
-            if (sim->player.hp <= 0) movement = { 0, 0 };
+            if (sim->player.hp <= 0 || sim->enemies.empty()) movement = { 0, 0 };
 
             if (!paused && IsKeyPressed(KEY_SPACE)) actionPending=true;
             if (!paused) {
@@ -158,7 +158,9 @@ int main(int argc, char** argv) {
             float radius=float(sim->level.agentRadius);
 
             if (sim->player.hp > 0) {
-                DrawCylinder(World(sim->player.position, 0), radius, radius, .7f, 12, GREEN);
+                const bool attacking = sim->player.attackCooldown > sim->player.attackDelay - 0.15;
+                DrawCylinder(World(sim->player.position, 0), radius, radius, .7f, 12,
+                    attacking ? ORANGE : GREEN);
                 DrawLine3D(World(sim->player.position, .8f),
                     World(sim->player.position + sim->player.facing * .7, .8f), WHITE);
             }
@@ -181,7 +183,14 @@ int main(int argc, char** argv) {
                 DrawText(TextFormat("%s | Selection: %s | NavMesh: %s",
                     sim->level.title.c_str(),cpe::Name(sim->algorithm),
                     sim->level.navmesh.IsBuilt()?"Construit":"A IMPLEMENTER"),25,55,18,LIGHTGRAY);
-                DrawText("Navigation, IA et gameplay : fonctions a completer dans src/student/",25,80,18,YELLOW);
+
+                if (selected < static_cast<int>(sim->enemies.size())) {
+                    const auto& e = sim->enemies[selected];
+                    DrawText(TextFormat("Ennemi %d | Etat: %s | PV: %d",
+                        selected, cpe::Name(e.state), e.hp),
+                        25, 80, 18, YELLOW);
+                }
+
                 if (hasProbe) {
                     DrawText(TextFormat("Sonde: %s | %d developpes | %.2f us",
                         cpe::Name(probe.search.status),probe.search.expanded,probe.queryMicroseconds),
@@ -197,6 +206,8 @@ int main(int argc, char** argv) {
 
             if (sim->player.hp <= 0)
                 DrawText("DEFAITE", GetScreenWidth() / 2 - 110, GetScreenHeight() / 2 - 24, 48, RED);
+            else if (sim->enemies.empty())
+                DrawText("VICTOIRE", GetScreenWidth() / 2 - 120, GetScreenHeight() / 2 - 24, 48, GREEN);
             DrawText(TextFormat("PV: %d | Ennemis: %d", sim->player.hp,
                 static_cast<int>(sim->enemies.size())), GetScreenWidth() - 260, 24, 20, WHITE);
             EndDrawing();
