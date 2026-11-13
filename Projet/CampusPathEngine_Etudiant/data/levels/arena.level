@@ -9,6 +9,8 @@ enemy light 6.8 3.5
 enemy light 6.8 -3.5
 enemy heavy 3 -4.5
 enemy light -3 -4.5
+enemy support 4 -5
+enemy support 6 -3
 
 # murs
 wall -1.5 -2 1.5 2 1.5

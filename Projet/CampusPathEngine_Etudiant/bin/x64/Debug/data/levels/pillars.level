@@ -6,6 +6,9 @@ player -6 0
 enemy light -6 -4
 enemy heavy 0 4
 enemy light 6 0
+enemy support 5 -3
+enemy support -5 -3
+
 wall -4.6 -1.2 -3.4 1.2 1.5
 wall -0.6 -1.2 0.6 1.2 1.8
 wall 3.4 -1.2 4.6 1.2 1.5

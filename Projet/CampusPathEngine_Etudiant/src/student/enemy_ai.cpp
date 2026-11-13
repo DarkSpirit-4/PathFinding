@@ -27,8 +27,7 @@ namespace cpe {
         if (enemy.state == State::Dead) return;
         if (enemy.state == State::Waiting) enemy.state = State::Idle;
 
-        const double distance = Distance(enemy.position, player.position);
-        const bool canHit = distance <= enemy.attackRange;
+        double distance = Distance(enemy.position, player.position);
 
         if (player.hp <= 0) {
             enemy.state = State::Idle;
@@ -134,6 +133,7 @@ namespace cpe {
             enemy.timer -= dt;
             if (enemy.timer <= 0) enemy.state = State::Chase;
             break;
+
         case State::Healing:
             if (enemy.healTarget >= 0 && enemy.healTarget < enemies.size()) {
                 enemy.timer -= dt;

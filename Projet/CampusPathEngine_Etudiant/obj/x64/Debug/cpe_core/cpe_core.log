@@ -1,3 +1,2 @@
-﻿  navmesh.cpp
-  pathfinding.cpp
-  cpe_core.vcxproj -> C:\Users\Rakot\source\repos\PathFindingFinal\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib
+﻿  enemy_ai.cpp
+  cpe_core.vcxproj -> C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib
