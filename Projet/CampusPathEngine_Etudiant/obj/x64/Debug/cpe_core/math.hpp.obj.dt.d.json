@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\rakot\\source\\repos\\pathfindingfinal\\projet\\campuspathengine_etudiant\\include\\cpe\\math.hpp",
+        "Source": "c:\\users\\hrakotoarivelo\\source\\repos\\pathfindingw\\projet\\campuspathengine_etudiant\\include\\cpe\\math.hpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files\\microsoft visual studio\\18\\insiders\\vc\\tools\\msvc\\14.52.37025\\include\\algorithm",
