@@ -170,7 +170,8 @@ int main(int argc, char** argv) {
             for (int i=0; i<static_cast<int>(sim->enemies.size()); ++i) {
                 const auto& e=sim->enemies[i];
                 bool heavy=e.kind==cpe::EnemyKind::Heavy;
-                DrawCylinder(World(e.position,0),radius,radius,heavy?.85f:.58f,heavy?6:10,heavy?MAROON:RED);
+                bool support = e.kind == cpe::EnemyKind::Support;
+                DrawCylinder(World(e.position,0),radius,radius,heavy?.85f: support? .65: .58f,heavy?6: support? 8: 10,heavy?MAROON: support?BLUE:RED);
                 if (i==selected) DrawCircle3D(World(e.position,.08f),radius+.15f,{1,0,0},90,YELLOW);
                 if (showPaths && i==selected) DrawPath(e.navigator.path,MAGENTA);
             }

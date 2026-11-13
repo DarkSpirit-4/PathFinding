@@ -28,9 +28,9 @@ Level Level::Load(const std::filesystem::path& file){
             gotPlayer=true;
         }else if(key=="enemy"){
             std::string kind;Spawn spawn;
-            if(!(in>>kind>>spawn.position.x>>spawn.position.z))error("enemy light|heavy x z");
-            if(kind!="light"&&kind!="heavy")error("unknown enemy kind");
-            spawn.kind=kind=="light"?EnemyKind::Light:EnemyKind::Heavy;
+            if(!(in>>kind>>spawn.position.x>>spawn.position.z))error("enemy light|heavy|support x z");
+            if(kind!="light"&&kind!="heavy"&&kind!="support")error("unknown enemy kind");
+            spawn.kind=kind=="light"?EnemyKind::Light: kind == "heavy" ? EnemyKind::Heavy:EnemyKind::Support;
             result.spawns.push_back(spawn);
         }else if(key=="wall"){
             Wall wall;

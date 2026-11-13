@@ -4,7 +4,7 @@
 #include <string>
 
 namespace cpe {
-enum class EnemyKind { Light,Heavy };
+enum class EnemyKind { Light,Heavy,Support };
 struct Spawn { Vec2 position;EnemyKind kind; };
 struct Wall { Box box;double height=1.5; };
 struct Level {

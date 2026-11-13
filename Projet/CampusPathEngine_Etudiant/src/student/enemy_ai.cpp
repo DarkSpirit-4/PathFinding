@@ -39,9 +39,38 @@ namespace cpe {
 
         switch (enemy.state) {
         case State::Idle:
-            if (distance <= enemy.detectRange) {
-                enemy.state = State::Chase;
-                enemy.navigator.Invalidate();
+            if (enemy.kind == EnemyKind::Support) {
+                int target = -1;
+                double minDistance = enemy.healRange;
+                for (int i = 0; i < enemies.size(); i++) {
+                    if (&enemies[i] == &enemy) continue;
+                    double allyDistance = Distance(enemy.position, enemies[i].position);
+                    if (allyDistance > 1e-8 && allyDistance < minDistance && enemies[i].hp != enemies[i].maxHp) {
+                        minDistance = allyDistance;
+                        target = i;
+                        }
+                    }
+                if (target != -1) {
+                    enemy.healTarget = target;
+                    enemy.state = State::Healing;
+                    enemy.timer = enemy.healCooldown;
+                }
+                else {
+                    enemy.healTarget = closest(enemy);
+                    if (enemy.healTarget == -1) {
+                        enemy.state = State::Idle;
+                    }
+                    else {
+                    enemy.navigator.Plan(level, enemy.position, enemies[enemy.healTarget].position, algorithm);
+                    enemy.position = enemy.navigator.Follow(level, enemy.position, enemy.speedsupport, dt);
+                    }
+                }
+                }
+            else {
+                if (distance <= enemy.detectRange) {
+                    enemy.state = State::Chase;
+                    enemy.navigator.Invalidate();
+                }
             }
             break;
 
@@ -105,6 +134,15 @@ namespace cpe {
             enemy.timer -= dt;
             if (enemy.timer <= 0) enemy.state = State::Chase;
             break;
+        case State::Healing:
+            if (enemy.healTarget >= 0 && enemy.healTarget < enemies.size()) {
+                enemy.timer -= dt;
+                if (enemy.timer <= 0.0) {
+                    enemies[enemy.healTarget].hp += enemy.heal;
+                    if (enemies[enemy.healTarget].hp > enemies[enemy.healTarget].maxHp) enemies[enemy.healTarget].hp = enemies[enemy.healTarget].maxHp;
+                    enemy.state = State::Idle;
+                }
+            }
 
         case State::Waiting: break;
 
