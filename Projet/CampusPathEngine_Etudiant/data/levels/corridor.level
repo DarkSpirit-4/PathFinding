@@ -1,0 +1,63 @@
+#Campus Path Engine 1.0 - coordinates in meters on XZ
+title Couloir de la mort
+bounds -8 -6 8 6
+radius 0.25
+player 0 4.5
+# wave 1
+wave
+enemy light -6.8 3.8
+enemy heavy -6.8 -3.8
+enemy light 6.8 3.5
+enemy light 6.8 -3.5
+endwave
+
+# wave 2
+wave 
+enemy light -6.8 3.8
+enemy heavy -6.8 -3.8
+enemy light 6.8 3.5
+enemy light 6.8 -3.5
+enemy heavy 3 -4.5
+enemy light -3 -4.5
+enemy support 4 -5
+endwave
+
+# wave 3
+wave
+enemy light -6.8 3.8
+enemy heavy -6.8 -3.8
+enemy light 6.8 3.5
+enemy light 6.8 -3.5
+enemy heavy 3 -4.5
+enemy light -3 -4.5
+enemy heavy 6.5 -3
+enemy light -3 5.5
+enemy support 4 -5
+enemy support 6 -3
+endwave
+
+
+# murs
+wall -1.5 -2 1.5 2 1.5
+wall -5.5 -6 -4.5 -0.5 1.5
+wall -5.5 0.5 -4.5 6 1.5
+wall 4.5 -2 5.5 2 1.5
+
+# surfaces
+surface 4 -7.7 -5.7 -5.8 -5.7 -5.8 -2.3 -7.7 -2.3
+surface 6 -7.7 -2.3 -5.8 -2.3 -5.8 -0.2 -5.8 0.2 -5.8 2.3 -7.7 2.3
+surface 4 -7.7 2.3 -5.8 2.3 -5.8 5.7 -7.7 5.7
+surface 4 -5.8 -0.2 -4.2 -0.2 -4.2 0.2 -5.8 0.2
+surface 6 -4.2 -2.3 -1.8 -2.3 -1.8 2.3 -4.2 2.3 -4.2 0.2 -4.2 -0.2
+surface 4 1.8 -2.3 4.2 -2.3 4.2 2.3 1.8 2.3
+surface 4 5.8 -2.3 7.7 -2.3 7.7 2.3 5.8 2.3
+surface 4 -4.2 -5.7 -1.8 -5.7 -1.8 -2.3 -4.2 -2.3
+surface 4 -1.8 -5.7 1.8 -5.7 1.8 -2.3 -1.8 -2.3
+surface 4 1.8 -5.7 4.2 -5.7 4.2 -2.3 1.8 -2.3
+surface 4 4.2 -5.7 5.8 -5.7 5.8 -2.3 4.2 -2.3
+surface 4 5.8 -5.7 7.7 -5.7 7.7 -2.3 5.8 -2.3
+surface 4 -4.2 2.3 -1.8 2.3 -1.8 5.7 -4.2 5.7
+surface 4 -1.8 2.3 1.8 2.3 1.8 5.7 -1.8 5.7
+surface 4 1.8 2.3 4.2 2.3 4.2 5.7 1.8 5.7
+surface 4 4.2 2.3 5.8 2.3 5.8 5.7 4.2 5.7
+surface 4 5.8 2.3 7.7 2.3 7.7 5.7 5.8 5.7

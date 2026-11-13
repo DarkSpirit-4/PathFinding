@@ -1,6 +1,6 @@
 ﻿  main.cpp
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
   (compiler le fichier source '../src/engine/main.cpp')
   
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\src\engine\main.cpp(174,69): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-  campus_path_engine.vcxproj -> C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\campus_path_engine.exe
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\src\engine\main.cpp(179,69): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  campus_path_engine.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\campus_path_engine.exe

@@ -1,23 +1,28 @@
-﻿  navigation_debug.cpp
+﻿  level.cpp
+  navigation_debug.cpp
   simulation.cpp
   enemy_ai.cpp
   gameplay.cpp
   navigation_agent.cpp
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+  navmesh.cpp
+  pathfinding.cpp
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
   (compiler le fichier source '../src/student/enemy_ai.cpp')
   
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
-  (compiler le fichier source '../src/engine/navigation_debug.cpp')
-  
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
   (compiler le fichier source '../src/engine/simulation.cpp')
   
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\src\engine\simulation.cpp(13,19): warning C4245: '=' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\src\engine\simulation.cpp(42,30): warning C4100: « actionPressed » : paramètre non référencé
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\src\engine\simulation.cpp(13,19): warning C4245: '=' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\src\engine\simulation.cpp(42,30): warning C4100: « actionPressed » : paramètre non référencé
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
   (compiler le fichier source '../src/student/gameplay.cpp')
   
-C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
   (compiler le fichier source '../src/student/navigation_agent.cpp')
   
-  cpe_core.vcxproj -> C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+  (compiler le fichier source '../src/engine/navigation_debug.cpp')
+  
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\src\engine\level.cpp(75,1): warning C4702: impossible d'atteindre le code
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\src\engine\level.cpp(81,1): warning C4715: 'cpe::Level::Load' : les chemins de contrôle ne retournent pas tous une valeur
+  cpe_core.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_core.lib

@@ -1,2 +1,5 @@
 ﻿  engine_tests.cpp
-  cpe_tests.vcxproj -> C:\Users\mwang\source\repos\PathFinding\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_tests.exe
+C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\include\cpe\simulation.hpp(59,31): warning C4245: 'initialisation' : conversion de 'int' en 'size_t', incompatibilité signed/unsigned
+  (compiler le fichier source '../tests/engine_tests.cpp')
+  
+  cpe_tests.vcxproj -> C:\Users\hrakotoarivelo\source\repos\PathFindingXXX\Projet\CampusPathEngine_Etudiant\bin\x64\Debug\cpe_tests.exe

@@ -96,11 +96,16 @@ int main(int argc, char** argv) {
                 selected=(selected+1)%static_cast<int>(sim->enemies.size());
             if (IsKeyPressed(KEY_R)) { sim->Reset(); selected=0; hasProbe=false; }
             if (IsKeyPressed(KEY_F5)) {
-                int nextScene=1-scene;
+                scene = (scene + 1) % 3;
+
+                std::string levelName;
+                if (scene == 0) levelName = "arena.level";
+                else if (scene == 1) levelName = "pillars.level";
+                else levelName = "corridor.level";
                 auto next=std::make_unique<cpe::Simulation>(
-                    cpe::Level::Load(data/"levels"/(nextScene?"pillars.level":"arena.level")));
+                    cpe::Level::Load(data/"levels"/(levelName)));
                 next->SetAlgorithm(sim->algorithm);
-                sim=std::move(next); scene=nextScene; selected=0; hasProbe=false;
+                sim=std::move(next); selected=0; hasProbe=false;
             }
             if (IsKeyPressed(KEY_TAB)) {
                 sim->SetAlgorithm(sim->algorithm==cpe::Algorithm::AStar
