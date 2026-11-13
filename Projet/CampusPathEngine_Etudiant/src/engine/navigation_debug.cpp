@@ -19,6 +19,7 @@ const char* Name(State s) {
         case State::Windup: return "Windup";
         case State::Recover: return "Recover";
         case State::Dead: return "Dead";
+        case State::Healing: return "Healing";
     }
     return "Unknown";
 }
