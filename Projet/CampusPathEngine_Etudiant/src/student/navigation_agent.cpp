@@ -73,5 +73,22 @@ int Simulation::closest(Enemy& enemy) {
     }
     return closest;
 }
+void Simulation::SpawnWave(std::size_t waveIndex)
+{
+    enemies.clear();
+
+    if (waveIndex >= level.waves.size())
+        return;
+
+    for (const Spawn& spawn : level.waves[waveIndex])
+    {
+        Enemy enemy;
+
+        enemy.kind = spawn.kind;
+        enemy.position = spawn.position;
+
+        enemies.push_back(enemy);
+    }
+}
 }
 

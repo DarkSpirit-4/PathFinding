@@ -3,6 +3,16 @@ title Arene - contournement
 bounds -8 -6 8 6
 radius 0.25
 player 0 4.5
+# wave 1
+wave
+enemy light -6.8 3.8
+enemy heavy -6.8 -3.8
+enemy light 6.8 3.5
+enemy light 6.8 -3.5
+endwave
+
+# wave 2
+wave 
 enemy light -6.8 3.8
 enemy heavy -6.8 -3.8
 enemy light 6.8 3.5
@@ -10,7 +20,22 @@ enemy light 6.8 -3.5
 enemy heavy 3 -4.5
 enemy light -3 -4.5
 enemy support 4 -5
+endwave
+
+# wave 3
+wave
+enemy light -6.8 3.8
+enemy heavy -6.8 -3.8
+enemy light 6.8 3.5
+enemy light 6.8 -3.5
+enemy heavy 3 -4.5
+enemy light -3 -4.5
+enemy heavy 6.5 -3
+enemy light -3 5.5
+enemy support 4 -5
 enemy support 6 -3
+endwave
+
 
 # murs
 wall -1.5 -2 1.5 2 1.5

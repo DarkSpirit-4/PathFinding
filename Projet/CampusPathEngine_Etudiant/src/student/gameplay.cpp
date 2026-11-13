@@ -35,5 +35,15 @@ void Simulation::UpdateGameplay(bool actionPressed, double dt) {
 
     enemies.erase(std::remove_if(enemies.begin(), enemies.end(),
         [](const Enemy& e) { return e.hp <= 0; }), enemies.end());
+
+    if (enemies.empty()) {
+        if (currentWave + 1 < level.waves.size()) {
+            ++currentWave;
+            SpawnWave(currentWave);
+        }
+        else {
+
+        }
+    }
 }
 }

@@ -9,6 +9,7 @@ Level Level::Load(const std::filesystem::path& file){
     if(!input)throw std::runtime_error("Cannot open level: "+file.string());
     Level result;std::vector<std::vector<Vec2>> polygons;
     std::string line;int number=0;bool gotBounds=false,gotPlayer=false,gotRadius=false;
+    bool insideWave = false;
     while(std::getline(input,line)){
         ++number;line=line.substr(0,line.find('#'));std::istringstream in(line);std::string key;
         if(!(in>>key))continue;
@@ -25,13 +26,25 @@ Level Level::Load(const std::filesystem::path& file){
         }else if(key=="player"){
             if(gotPlayer)error("duplicate player");
             if(!(in>>result.playerSpawn.x>>result.playerSpawn.z))error("player x z");
-            gotPlayer=true;
-        }else if(key=="enemy"){
+            gotPlayer = true;
+        }
+        else if (key == "wave") {
+            result.waves.emplace_back();
+            insideWave = true;
+        }
+        else if (key == "endwave") {
+            insideWave = false;
+
+        }else if (key == "enemy" && insideWave) {
             std::string kind;Spawn spawn;
             if(!(in>>kind>>spawn.position.x>>spawn.position.z))error("enemy light|heavy|support x z");
             if(kind!="light"&&kind!="heavy"&&kind!="support")error("unknown enemy kind");
             spawn.kind=kind=="light"?EnemyKind::Light: kind == "heavy" ? EnemyKind::Heavy:EnemyKind::Support;
-            result.spawns.push_back(spawn);
+            result.waves.back().push_back(spawn);
+        }
+        else if (key == "enemy") {
+            if (!insideWave)
+                error("enemy must be inside a wave");
         }else if(key=="wall"){
             Wall wall;
             if(!(in>>wall.box.min.x>>wall.box.min.z>>wall.box.max.x>>wall.box.max.z>>wall.height))error("wall xmin zmin xmax zmax height");
@@ -59,10 +72,12 @@ Level Level::Load(const std::filesystem::path& file){
     result.navmesh.Build(); // Retourne false tant que le module n'est pas implémenté.
     if(!result.CanStand(result.playerSpawn,result.agentRadius))
         throw std::runtime_error("Invalid player spawn (physical collision)");
-    for(const auto& spawn:result.spawns)
-        if(!result.CanStand(spawn.position,result.agentRadius))
-            throw std::runtime_error("Invalid enemy spawn (physical collision)");
-    return result;
+    for (int i = 0; i < result.waves.size(); i++) {
+        for (const auto& spawn : result.waves[i])
+            if (!result.CanStand(spawn.position, result.agentRadius))
+                throw std::runtime_error("Invalid enemy spawn (physical collision)");
+        return result;
+    }
 }
 bool Level::CanStand(Vec2 p,double radius)const{
     if(!Finite(p)||!std::isfinite(radius)||radius<0)return false;

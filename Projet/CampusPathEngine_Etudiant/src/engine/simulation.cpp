@@ -10,12 +10,7 @@ void Simulation::Reset() {
     enemies.clear();
     elapsed = 0;
 
-    for (const auto& spawn : level.spawns) {
-        Enemy enemy;
-        enemy.position = spawn.position;
-        enemy.kind = spawn.kind;
-        enemies.push_back(enemy);
-    }
+    currentWave = -1;
 }
 
 void Simulation::SetAlgorithm(Algorithm value) {

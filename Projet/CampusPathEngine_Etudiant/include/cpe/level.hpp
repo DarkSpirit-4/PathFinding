@@ -12,7 +12,7 @@ struct Level {
     double agentRadius=0.25;
     Box bounds;
     Vec2 playerSpawn;
-    std::vector<Spawn> spawns;
+    std::vector<std::vector<Spawn>> waves;
     std::vector<Wall> walls;
     NavMesh navmesh;
     static Level Load(const std::filesystem::path& file);

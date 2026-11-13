@@ -9,7 +9,7 @@ double attackCooldown = 0.0;
 double attackRange = 1.6;
 double attackCone = 0.5;
 double attackDelay = 0.8;
-int attackDamage = 2;
+int attackDamage = 5;
 };
 
 // Ce composant expose les données au debug ; le suivi est à implémenter.
@@ -56,6 +56,7 @@ public:
     std::vector<Enemy> enemies;
     Algorithm algorithm = Algorithm::AStar;
     double elapsed = 0;
+    std::size_t currentWave = -1;
 
     // Fourni : déplacement, collisions, boucle et appels des points d'extension.
     void Update(Vec2 movement, bool actionPressed, double dt);
@@ -64,6 +65,7 @@ public:
     void SetAlgorithm(Algorithm value);
     std::size_t RequestCount() const;
     int closest(Enemy& enemy);
+    void SpawnWave(std::size_t waveIndex);
 
 private:
     // À réaliser dans src/student/enemy_ai.cpp et gameplay.cpp.
